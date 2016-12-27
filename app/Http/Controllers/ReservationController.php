@@ -8,5 +8,7 @@ use App\Http\Requests;
 
 class ReservationController extends Controller
 {
-    //
+    public function index(){
+        var_dump("Hello");
+    }
 }

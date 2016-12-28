@@ -39,8 +39,6 @@ class ReservationController extends Controller
                 }
             }
         }
-        var_dump($seat);
-        echo '<br />';
 
         $seatBook = 4;
         $seatBooked = 0;
@@ -65,8 +63,6 @@ class ReservationController extends Controller
                 }
             }
         }
-        echo '<br />';
-        var_dump($seat);
 
         $seatBook = 2;
         $seatBooked = 0;
@@ -91,9 +87,6 @@ class ReservationController extends Controller
                 }
             }
         }
-        echo '<br />';
-        var_dump($seat);
-
         $seatBook = 7;
         $seatBooked = 0;
         if ($seatBook <= 7 && $seatBook > 0) {
@@ -117,8 +110,6 @@ class ReservationController extends Controller
                 }
             }
         }
-        echo '<br />';
-        var_dump($seat);
 
         $seatBook = 5;
         $seatBooked = 0;
@@ -143,9 +134,17 @@ class ReservationController extends Controller
                 }
             }
         }
-        echo '<br />';
-        var_dump($seat);
+        $this->printArray($seat);
 
+    }
+
+    public function printArray($bookingSeat)
+    {
+        for($i = 0 ; $i < 12; $i++){
+            for($j = 0; $j < 7; $j ++)
+                echo " ". $bookingSeat[$i][$j];
+            echo '<br />';
+        }
     }
 
 

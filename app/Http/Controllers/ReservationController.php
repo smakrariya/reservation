@@ -27,12 +27,13 @@ class ReservationController extends Controller
             }
         }
         $seatBooked = 6;
-        for($i = 0; $i <= 17; $i++){
-            $bookedSeat = $this->SeatBooking($seat, rand(1, 7));
+        for($i = 0; $i <= 12; $i++){
+            //$bookedSeat = $this->SeatBooking($seat, rand(1, 7));
+            $bookedSeat = $this->SeatBooking($seat, 6);
 
             if($bookedSeat){
                 $seat = $bookedSeat;
-                //$this->printArray($bookedSeat);
+                $this->printArray($bookedSeat);
             }
 
             else
@@ -42,7 +43,7 @@ class ReservationController extends Controller
             }
 
         }
-        $this->printArray($bookedSeat);
+        //$this->printArray($bookedSeat);
     }
     /**
      * @param $bookingSeat

@@ -61,7 +61,7 @@ class ReservationController extends Controller
         for($i = 0 ; $i < 12; $i++){
             for($j = 0; $j < 7; $j ++) {
                 if($bookingSeat[$i][$j] == 1)
-                    echo "| " . $i*$j;
+                    echo "| " . $i*7 + $j;
                 else
                     echo "| ". $bookingSeat[$i][$j];
             }

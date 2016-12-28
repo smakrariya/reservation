@@ -26,17 +26,11 @@ class ReservationController extends Controller
                         if ($seat[$i][$j] == 0)
                             $counter++;
                         if ($counter == $seatBook) {
-                            for ($k = 0; $k < 7; $k++) {
-                                if ($seat[$i][$k] == 0)
-                                    break;
-                            }
-                            var_dump($k);
-                            echo '<br />';
-
-                            $loopLimit = $k + $seatBook;
-                            while ($k < $loopLimit) {
-                                $seat[$i][$k] = 1;
-                                $k++;
+                            $loopstart = $j - $counter + 1;
+                            $loopLimit = $loopstart + $counter;
+                            while ($loopstart < $loopLimit) {
+                                $seat[$i][$loopstart] = 1;
+                                $loopstart++;
                             }
                             $seatBooked = 1;
                         }

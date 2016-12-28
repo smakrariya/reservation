@@ -17,7 +17,7 @@ class ReservationController extends Controller
             }
         }
 
-        for($i = 0; $i <= 6; $i++){
+        for($i = 0; $i <= 11; $i++){
             $seat = $this->SeatBooking($seat, rand(1, 7));
             $this->printArray($seat);
         }

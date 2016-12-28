@@ -8,11 +8,7 @@ use App\Http\Requests;
 
 class ReservationController extends Controller
 {
-
-    public function index(){
-        return view('Reservation');
-    }
-    public function calculation()
+    public function index()
     {
         $seat = [];
         for ($i = 11; $i >= 0; $i--) {

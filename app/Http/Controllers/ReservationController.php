@@ -30,8 +30,9 @@ class ReservationController extends Controller
         if ($seatBook <= 7 && $seatBook > 0) {
             for ($i = 11; $i >= 0; $i--) {
                 $counter = 0;
+                $rowLimit = ($i == 11) ? 3 : 7;
                 if(!$seatBooked) {
-                    for ($j = 0; $j < 7; $j++) {
+                    for ($j = 0; $j < $rowLimit; $j++) {
                         if ($bookingSeat[$i][$j] == 0)
                             $counter++;
                         if ($counter == $seatBook) {

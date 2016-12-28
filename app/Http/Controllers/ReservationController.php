@@ -19,8 +19,10 @@ class ReservationController extends Controller
         $seatBooked = 6;
         for($i = 0; $i <= 10; $i++){
             $bookedSeat = $this->SeatBooking($seat, rand(1, 7));
-            if($bookedSeat)
+            if($bookedSeat){
+                $seat = $bookedSeat;
                 $this->printArray($bookedSeat);
+            }
             else{
                 $bookedSeat = $this->SeatBookingNotInSameRow($seat, $seatBooked);
             }

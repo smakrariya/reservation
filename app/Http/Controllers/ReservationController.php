@@ -16,16 +16,16 @@ class ReservationController extends Controller
                 $seat[$i][$j] = 0;
             }
         }
-        $this->SeatBooking($seat, 6);
+        $seat = $this->SeatBooking($seat, 6);
         $this->printArray($seat);
 
-        $this->SeatBooking($seat, 4);
+        $seat = $this->SeatBooking($seat, 4);
         $this->printArray($seat);
 
-        $this->SeatBooking($seat, 7);
+        $seat = $this->SeatBooking($seat, 7);
         $this->printArray($seat);
 
-        $this->SeatBooking($seat, 3);
+        $seat = $this->SeatBooking($seat, 3);
         $this->printArray($seat);
 
     }
@@ -57,6 +57,8 @@ class ReservationController extends Controller
 
         else
             die('Please type authorise number');
+
+        return $bookingSeat;
     }
 
     public function printArray($bookingSeat)
@@ -66,6 +68,8 @@ class ReservationController extends Controller
                 echo " ". $bookingSeat[$i][$j];
             echo '<br />';
         }
+
+        echo '<br />';
     }
 
 

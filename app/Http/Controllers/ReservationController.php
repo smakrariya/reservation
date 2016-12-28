@@ -11,6 +11,7 @@ class ReservationController extends Controller
     public function index()
     {
         $seat[12][7] = [0];
+        var_dump($seat);die;
         $seatBook = 6;
         if ($seatBook <= 7 && $seatBook > 0) {
             for ($i = 11; $i >= 0; $i--) {

@@ -38,6 +38,7 @@ class ReservationController extends Controller
             else
             {
                 $bookedSeat = $this->SeatBookingNotInSameRow($seat, $seatBooked);
+                $seat = $bookedSeat;
                 $this->printArray($bookedSeat);
             }
 

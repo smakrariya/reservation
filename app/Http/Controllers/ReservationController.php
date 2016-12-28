@@ -28,6 +28,9 @@ class ReservationController extends Controller
         $seat = $this->SeatBooking($seat, 3);
         $this->printArray($seat);
 
+        $seat = $this->SeatBooking($seat, 1);
+        $this->printArray($seat);
+
     }
 
     public function SeatBooking($bookingSeat, $seatBook){

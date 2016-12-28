@@ -25,6 +25,7 @@ class ReservationController extends Controller
 
     public function SeatBooking($bookingSeat, $seatBook){
 
+        var_dump($seatBook);echo "<br> /";
         $seatBooked = 0;
         if ($seatBook <= 7 && $seatBook > 0) {
             for ($i = 11; $i >= 0; $i--) {

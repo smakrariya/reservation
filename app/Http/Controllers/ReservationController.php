@@ -30,13 +30,15 @@ class ReservationController extends Controller
                                 if ($seat[$i][$k] == 0)
                                     break;
                             }
+                            var_dump($k);
+                            echo '<br />';
+
                             $loopLimit = $k + $seatBook;
                             while ($k < $loopLimit) {
                                 $seat[$i][$k] = 1;
                                 $k++;
-                                $seatBooked = 1;
                             }
-
+                            $seatBooked = 1;
                         }
 
                     }

@@ -103,6 +103,7 @@ class ReservationController extends Controller
             }
         }
         if($counter >= $seatBooking){
+            var_dump($counter);
             $seat = $this->booking($seat, $seatBooking);
             return $seat;
         }

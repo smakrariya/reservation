@@ -94,25 +94,21 @@ class ReservationController extends Controller
     public function SeatBookingNotInSameRow($seat, $seatBooking)
     {
         $counter = 0;
-        $spaceAvaliable = 0;
         for ($i = 11; $i >= 0; $i--) {
             $rowLimit = ($i == 11) ? 3 : 7;
-            if(!$spaceAvaliable) {
-                for ($j = 0; $j < $rowLimit; $j++) {
+            for ($j = 0; $j < $rowLimit; $j++) {
                     if ($seat[$i][$j] == 0) {
                         $counter++;
                     }
-                    if ($counter == $seatBooking) {
-                        $spaceAvaliable = 1;
-                        $seat = $this->booking($seat, $seatBooking);
-                        return $seat;
-                    }
-
-                }
             }
-            else
-                echo "Seats Not Avaliable";
         }
+        if($counter >= $seatBooking){
+            $seat = $this->booking($seat, $seatBooking);
+            return $seat;
+        }
+        else
+            echo "NO SPACE IS AVALIABLE";
+
     }
 
     /**

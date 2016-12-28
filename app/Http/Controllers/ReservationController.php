@@ -30,7 +30,7 @@ class ReservationController extends Controller
                         }
                         $loopLimit = $k+$seatBook;
                         while ($k < $loopLimit){
-                            $seatBook[$i][$k] = 1;
+                            $seat[$i][$k] = 1;
                             $k++;
                         }
 

@@ -16,126 +16,47 @@ class ReservationController extends Controller
                 $seat[$i][$j] = 0;
             }
         }
-        $seatBook = 6;
-        $seatBooked = 0;
-        if ($seatBook <= 7 && $seatBook > 0) {
-            for ($i = 11; $i >= 0; $i--) {
-                $counter = 0;
-                if(!$seatBooked) {
-                    for ($j = 0; $j < 7; $j++) {
-                        if ($seat[$i][$j] == 0)
-                            $counter++;
-                        if ($counter == $seatBook) {
-                            $loopstart = $j - $counter + 1;
-                            $loopLimit = $loopstart + $counter;
-                            while ($loopstart < $loopLimit) {
-                                $seat[$i][$loopstart] = 1;
-                                $loopstart++;
-                            }
-                            $seatBooked = 1;
-                        }
-
-                    }
-                }
-            }
-        }
-
-        $seatBook = 4;
-        $seatBooked = 0;
-        if ($seatBook <= 7 && $seatBook > 0) {
-            for ($i = 11; $i >= 0; $i--) {
-                $counter = 0;
-                if(!$seatBooked) {
-                    for ($j = 0; $j < 7; $j++) {
-                        if ($seat[$i][$j] == 0)
-                            $counter++;
-                        if ($counter == $seatBook) {
-                            $loopstart = $j - $counter + 1;
-                            $loopLimit = $loopstart + $counter;
-                            while ($loopstart < $loopLimit) {
-                                $seat[$i][$loopstart] = 1;
-                                $loopstart++;
-                            }
-                            $seatBooked = 1;
-                        }
-
-                    }
-                }
-            }
-        }
-
-        $seatBook = 2;
-        $seatBooked = 0;
-        if ($seatBook <= 7 && $seatBook > 0) {
-            for ($i = 11; $i >= 0; $i--) {
-                $counter = 0;
-                if(!$seatBooked) {
-                    for ($j = 0; $j < 7; $j++) {
-                        if ($seat[$i][$j] == 0)
-                            $counter++;
-                        if ($counter == $seatBook) {
-                            $loopstart = $j - $counter + 1;
-                            $loopLimit = $loopstart + $counter;
-                            while ($loopstart < $loopLimit) {
-                                $seat[$i][$loopstart] = 1;
-                                $loopstart++;
-                            }
-                            $seatBooked = 1;
-                        }
-
-                    }
-                }
-            }
-        }
-        $seatBook = 7;
-        $seatBooked = 0;
-        if ($seatBook <= 7 && $seatBook > 0) {
-            for ($i = 11; $i >= 0; $i--) {
-                $counter = 0;
-                if(!$seatBooked) {
-                    for ($j = 0; $j < 7; $j++) {
-                        if ($seat[$i][$j] == 0)
-                            $counter++;
-                        if ($counter == $seatBook) {
-                            $loopstart = $j - $counter + 1;
-                            $loopLimit = $loopstart + $counter;
-                            while ($loopstart < $loopLimit) {
-                                $seat[$i][$loopstart] = 1;
-                                $loopstart++;
-                            }
-                            $seatBooked = 1;
-                        }
-
-                    }
-                }
-            }
-        }
-
-        $seatBook = 5;
-        $seatBooked = 0;
-        if ($seatBook <= 7 && $seatBook > 0) {
-            for ($i = 11; $i >= 0; $i--) {
-                $counter = 0;
-                if(!$seatBooked) {
-                    for ($j = 0; $j < 7; $j++) {
-                        if ($seat[$i][$j] == 0)
-                            $counter++;
-                        if ($counter == $seatBook) {
-                            $loopstart = $j - $counter + 1;
-                            $loopLimit = $loopstart + $counter;
-                            while ($loopstart < $loopLimit) {
-                                $seat[$i][$loopstart] = 1;
-                                $loopstart++;
-                            }
-                            $seatBooked = 1;
-                        }
-
-                    }
-                }
-            }
-        }
+        $this->SeatBooking($seat, 6);
         $this->printArray($seat);
 
+        $this->SeatBooking($seat, 4);
+        $this->printArray($seat);
+
+        $this->SeatBooking($seat, 7);
+        $this->printArray($seat);
+
+        $this->SeatBooking($seat, 3);
+        $this->printArray($seat);
+
+    }
+
+    public function SeatBooking($bookingSeat, $seatBook){
+
+        $seatBooked = 0;
+        if ($seatBook <= 7 && $seatBook > 0) {
+            for ($i = 11; $i >= 0; $i--) {
+                $counter = 0;
+                if(!$seatBooked) {
+                    for ($j = 0; $j < 7; $j++) {
+                        if ($bookingSeat[$i][$j] == 0)
+                            $counter++;
+                        if ($counter == $seatBook) {
+                            $loopstart = $j - $counter + 1;
+                            $loopLimit = $loopstart + $counter;
+                            while ($loopstart < $loopLimit) {
+                                $bookingSeat[$i][$loopstart] = 1;
+                                $loopstart++;
+                            }
+                            $seatBooked = 1;
+                        }
+
+                    }
+                }
+            }
+        }
+
+        else
+            die('Please type authorise number');
     }
 
     public function printArray($bookingSeat)

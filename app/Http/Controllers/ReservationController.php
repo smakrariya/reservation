@@ -97,8 +97,9 @@ class ReservationController extends Controller
         $counter = 0;
         $spaceAvaliable = 0;
         for ($i = 11; $i >= 0; $i--) {
+            $rowLimit = ($i == 11) ? 3 : 7;
             if(!$spaceAvaliable) {
-                for ($j = 0; $j < 7; $j++) {
+                for ($j = 0; $j < $rowLimit; $j++) {
                     if ($seat[$i][$j] == 0) {
                         $counter++;
                     }

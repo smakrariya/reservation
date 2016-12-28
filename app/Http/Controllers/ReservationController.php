@@ -11,7 +11,7 @@ class ReservationController extends Controller
     public function index()
     {
         $seat = [];
-        for ($i = 10; $i >= 0; $i--) {
+        for ($i = 11; $i >= 0; $i--) {
             for ($j = 0; $j < 7; $j++) {
                 $seat[$i][$j] = 0;
             }
@@ -40,10 +40,10 @@ class ReservationController extends Controller
         echo "<br />";
         $seatBooked = 0;
         if ($seatBook <= 7 && $seatBook > 0) {
-            for ($i = 10; $i >= 0; $i--) {
+            for ($i = 11; $i >= 0; $i--) {
 
                 $counter = 0;
-                $rowLimit = ($i == 10) ? 3 : 7;
+                $rowLimit = ($i == 11) ? 3 : 7;
 
                 if(!$seatBooked) {
 
@@ -80,7 +80,7 @@ class ReservationController extends Controller
     {
         $counter = 0;
         $spaceAvaliable = 0;
-        for ($i = 10; $i >= 0; $i--) {
+        for ($i = 11; $i >= 0; $i--) {
             if(!$spaceAvaliable) {
                 for ($j = 0; $j < 7; $j++) {
                     if ($seat[$i][$j] == 0) {
@@ -102,7 +102,7 @@ class ReservationController extends Controller
     public function booking($seat , $seatBooking){
         $counter = 0;
         $booked = 0;
-        for ($i = 10; $i >= 0; $i--) {
+        for ($i = 11; $i >= 0; $i--) {
             if (!$booked) {
                 for ($j = 0; $j < 7; $j++) {
                     if ($seat[$i][$j] == 0) {
@@ -123,7 +123,7 @@ class ReservationController extends Controller
      */
     public function printArray($bookingSeat)
     {
-        for($i = 0 ; $i < 11; $i++){
+        for($i = 0 ; $i < 12; $i++){
             for($j = 0; $j < 7; $j ++) {
                 if($bookingSeat[$i][$j] == 1)
                     echo "| " . (($i)*7 + ($j+1));

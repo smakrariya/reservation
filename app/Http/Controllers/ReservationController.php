@@ -68,5 +68,85 @@ class ReservationController extends Controller
         echo '<br />';
         var_dump($seat);
 
+        $seatBook = 2;
+        $seatBooked = 0;
+        if ($seatBook <= 7 && $seatBook > 0) {
+            for ($i = 11; $i >= 0; $i--) {
+                $counter = 0;
+                if(!$seatBooked) {
+                    for ($j = 0; $j < 7; $j++) {
+                        if ($seat[$i][$j] == 0)
+                            $counter++;
+                        if ($counter == $seatBook) {
+                            $loopstart = $j - $counter + 1;
+                            $loopLimit = $loopstart + $counter;
+                            while ($loopstart < $loopLimit) {
+                                $seat[$i][$loopstart] = 1;
+                                $loopstart++;
+                            }
+                            $seatBooked = 1;
+                        }
+
+                    }
+                }
+            }
+        }
+        echo '<br />';
+        var_dump($seat);
+
+        $seatBook = 7;
+        $seatBooked = 0;
+        if ($seatBook <= 7 && $seatBook > 0) {
+            for ($i = 11; $i >= 0; $i--) {
+                $counter = 0;
+                if(!$seatBooked) {
+                    for ($j = 0; $j < 7; $j++) {
+                        if ($seat[$i][$j] == 0)
+                            $counter++;
+                        if ($counter == $seatBook) {
+                            $loopstart = $j - $counter + 1;
+                            $loopLimit = $loopstart + $counter;
+                            while ($loopstart < $loopLimit) {
+                                $seat[$i][$loopstart] = 1;
+                                $loopstart++;
+                            }
+                            $seatBooked = 1;
+                        }
+
+                    }
+                }
+            }
+        }
+        echo '<br />';
+        var_dump($seat);
+
+        $seatBook = 5;
+        $seatBooked = 0;
+        if ($seatBook <= 7 && $seatBook > 0) {
+            for ($i = 11; $i >= 0; $i--) {
+                $counter = 0;
+                if(!$seatBooked) {
+                    for ($j = 0; $j < 7; $j++) {
+                        if ($seat[$i][$j] == 0)
+                            $counter++;
+                        if ($counter == $seatBook) {
+                            $loopstart = $j - $counter + 1;
+                            $loopLimit = $loopstart + $counter;
+                            while ($loopstart < $loopLimit) {
+                                $seat[$i][$loopstart] = 1;
+                                $loopstart++;
+                            }
+                            $seatBooked = 1;
+                        }
+
+                    }
+                }
+            }
+        }
+        echo '<br />';
+        var_dump($seat);
+
     }
+
+
 }

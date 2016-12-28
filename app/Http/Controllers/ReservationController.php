@@ -58,9 +58,14 @@ class ReservationController extends Controller
 
     public function printArray($bookingSeat)
     {
+        $seatNo = 0;
         for($i = 0 ; $i < 12; $i++){
-            for($j = 0; $j < 7; $j ++)
-                echo " ". $bookingSeat[$i][$j];
+            for($j = 0; $j < 7; $j ++) {
+                if($bookingSeat[$i][$j] == 1)
+                    echo "| " . $seatNo++;
+                else
+                    echo "| ". $bookingSeat[$i][$j];
+            }
             echo '<br />';
         }
 

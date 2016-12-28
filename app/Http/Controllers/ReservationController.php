@@ -8,10 +8,17 @@ use App\Http\Requests;
 
 class ReservationController extends Controller
 {
-    public function index(){
+    /*public function index(){
+        $seat = [];
+        for ($i = 11; $i >= 0; $i--) {
+            for ($j = 0; $j < 7; $j++) {
+                $seat[$i][$j] = 0;
+            }
+        }
+
         return view('Reservation');
-    }
-    public function calculation()
+    }*/
+    public function index()
     {
         $seat = [];
         for ($i = 11; $i >= 0; $i--) {
@@ -135,15 +142,19 @@ class ReservationController extends Controller
      */
     public function printArray($bookingSeat)
     {
+        echo '<table>';
         for($i = 0 ; $i < 12; $i++){
+            echo '<tr>';
             for($j = 0; $j < 7; $j ++) {
                 if($bookingSeat[$i][$j] == 1)
-                    echo "| " . (($i)*7 + ($j+1));
+                    echo '<td>' . (($i)*7 + ($j+1)).'</td>';
                 else
-                    echo "| ". $bookingSeat[$i][$j];
+                    echo '<td>' . $bookingSeat[$i][$j].'</td>';
+                    //echo "| ". $bookingSeat[$i][$j];
             }
-            echo '<br />';
+            echo '</tr>';
         }
+        echo '</table>';
         echo '<br />';
     }
 

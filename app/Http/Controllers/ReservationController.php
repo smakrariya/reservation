@@ -17,13 +17,15 @@ class ReservationController extends Controller
             }
         }
         $seatBooked = 6;
-        for($i = 0; $i <= 16; $i++){
+        for($i = 0; $i <= 17; $i++){
             $bookedSeat = $this->SeatBooking($seat, rand(1, 7));
             if($bookedSeat){
                 $seat = $bookedSeat;
                 $this->printArray($bookedSeat);
             }
-            else{
+
+            else
+            {
                 $bookedSeat = $this->SeatBookingNotInSameRow($seat, $seatBooked);
                 $this->printArray($bookedSeat);
             }
@@ -100,7 +102,13 @@ class ReservationController extends Controller
         }
     }
 
-    public function booking($seat , $seatBooking){
+    /**
+     * @param $seat
+     * @param $seatBooking
+     * @return mixed
+     */
+    public function booking($seat , $seatBooking)
+    {
         $counter = 0;
         $booked = 0;
         for ($i = 11; $i >= 0; $i--) {
@@ -133,7 +141,6 @@ class ReservationController extends Controller
             }
             echo '<br />';
         }
-
         echo '<br />';
     }
 

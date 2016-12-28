@@ -16,3 +16,4 @@ Route::get('/', function () {
 });
 
 Route::get('/reservation', 'ReservationController@index');
+Route::post('/save', 'ReservationController@calculation');

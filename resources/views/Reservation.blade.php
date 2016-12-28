@@ -36,7 +36,16 @@
     </style>
 </head>
 <body>
-<p>1<p>
+    <form method="post" action="/save">
+        <div class="form-group">
+            <textarea name="body" class="form-control"></textarea>
+        </div>
+
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary">Reservation</button>
+        </div>
+
+    </form>
 </body>
 </html>
 

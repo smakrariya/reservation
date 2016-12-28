@@ -16,21 +16,9 @@ class ReservationController extends Controller
                 $seat[$i][$j] = 0;
             }
         }
-        $seat = $this->SeatBooking($seat, 6);
-        $this->printArray($seat);
 
-        $seat = $this->SeatBooking($seat, 4);
-        $this->printArray($seat);
-
-        $seat = $this->SeatBooking($seat, 7);
-        $this->printArray($seat);
-
-        $seat = $this->SeatBooking($seat, 3);
-        $this->printArray($seat);
-
-        $seat = $this->SeatBooking($seat, 1);
-        $this->printArray($seat);
-
+        for($i = 0; $i <= 6; $i++)
+            $seat = $this->SeatBooking($seat, rand(1, 7));
     }
 
     public function SeatBooking($bookingSeat, $seatBook){

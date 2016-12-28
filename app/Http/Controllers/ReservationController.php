@@ -16,7 +16,6 @@ class ReservationController extends Controller
                 $seat[$i][$j] = 0;
             }
         }
-        var_dump($seat);die;
         $seatBook = 6;
         if ($seatBook <= 7 && $seatBook > 0) {
             for ($i = 11; $i >= 0; $i--) {

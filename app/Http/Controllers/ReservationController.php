@@ -17,7 +17,7 @@ class ReservationController extends Controller
         }
 
         if(!Session::has('reservation'))
-            Session::put(['reservation' => $seat]);
+            Session::put('reservation', $seat);
 
         return view('Reservation');
     }
@@ -150,6 +150,7 @@ class ReservationController extends Controller
      */
     public function printArray($bookingSeat)
     {
+        Session::put(['reservation' => $bookingSeat]);
         echo '<table>';
         for($i = 0 ; $i < 12; $i++){
             echo '<tr>';

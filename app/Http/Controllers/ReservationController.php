@@ -90,8 +90,10 @@ class ReservationController extends Controller
             }
         }
 
-        else
-            die('Please type authorise number');
+        else{
+            echo'Please type authorise number';
+            $this->button();
+        }
 
         if($seatBooked)
             return $bookingSeat;
@@ -114,8 +116,10 @@ class ReservationController extends Controller
             $seat = $this->booking($seat, $seatBooking);
             return $seat;
         }
-        else
+        else{
             echo "NO SPACE IS AVALIABLE";
+            $this->button();
+        }
 
     }
 
@@ -164,14 +168,15 @@ class ReservationController extends Controller
         }
         echo '</table>';
         echo '<br />';
+        $this->button();
+    }
 
+    public function button(){
         echo '<form method="GET" action="/back">
                 <div class="form-group">
             <button type="submit" class="btn btn-primary">Reservation</button>
         </div>
         </form>';
-
     }
-
 
 }

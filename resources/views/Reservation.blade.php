@@ -43,6 +43,9 @@
         .badge-active-seat{
             background-color: darkgreen;
         }
+        .badge{
+            width: 28px;
+        }
     </style>
 </head>
 <body onload="reservationBooking(0)">

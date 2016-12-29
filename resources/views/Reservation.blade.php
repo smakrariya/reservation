@@ -45,7 +45,7 @@
         }
     </style>
 </head>
-<body onload="drawSeats()">
+<body onload="reservationBooking()">
 <div class="text-center">
     <div id="row1"></div>
     <div id="row2"></div>

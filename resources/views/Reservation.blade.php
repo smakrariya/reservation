@@ -76,6 +76,10 @@
                 type:'get',
                 url:'/save?seatsNo='+$('#seatsNo').val(),
                 success: function (data) {
+                    if(typeof data == "string"){
+                        alert (data);
+                        return;
+                    }
                     drawSeats(data);
                 }
             });

@@ -44,8 +44,11 @@ class ReservationController extends Controller
             else
             {
                 $bookedSeat = $this->SeatBookingNotInSameRow($seat, $seatBooked);
-                $seat = $bookedSeat;
-                return $this->printArray($bookedSeat);
+                //$seat = $bookedSeat;
+                if($bookedSeat)
+                    return $this->printArray($bookedSeat);
+                else
+                    return "NO SPACE IS AVAILABLE";
             }
 
         //}
@@ -115,8 +118,7 @@ class ReservationController extends Controller
             return $seat;
         }
         else{
-            echo "NO SPACE IS AVALIABLE";
-            $this->button();
+            return 0;
         }
 
     }

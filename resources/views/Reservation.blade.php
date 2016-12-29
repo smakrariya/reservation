@@ -42,7 +42,7 @@
     </style>
 </head>
 <body>
-    <form onsubmit="return reservationBooking();" style="max-width: 500px; margin-top: 15px;">
+    <form method="get" onsubmit="return reservationBooking();" style="max-width: 500px; margin-top: 15px;">
         <div class="form-group col-sm-12"  >
             <input id="seatsNo" name="seatsNo" type="number" min="1" max="7" class="form-control" required>
         </div>
@@ -53,8 +53,7 @@
 
     </form>
     <script>
-        function reservationBooking(e) {
-            e.preventDefault();
+        function reservationBooking() {
             $.ajax({
                 type:'get',
                 url:'/save?seatsNo='+$('#seatsNo').val(),

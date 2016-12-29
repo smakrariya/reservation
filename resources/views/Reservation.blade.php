@@ -42,7 +42,7 @@
     </style>
 </head>
 <body>
-    <form method="GET" action="/save" style="max-width: 500px">
+    <form method="GET" action="/save" style="max-width: 500px; margin-top: 15px;">
         <div class="form-group col-sm-12"  >
             <textarea name="body" class="form-control"></textarea>
         </div>

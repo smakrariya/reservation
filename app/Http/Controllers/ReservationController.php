@@ -152,7 +152,8 @@ class ReservationController extends Controller
      */
     public function printArray($bookingSeat)
     {
-        return $bookingSeat;
+        var_dump($bookingSeat);die;
+        return json_encode($bookingSeat);
         /*Session::put(['reservation' => $bookingSeat]);
         echo '<table>';
         for($i = 0 ; $i < 12; $i++){

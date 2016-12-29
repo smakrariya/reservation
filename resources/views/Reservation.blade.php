@@ -42,13 +42,13 @@
     </style>
 </head>
 <body>
-    <form method="GET" action="/save">
-        <div class="form-group">
+    <form method="GET" action="/save" style="max-width: 500px">
+        <div class="form-group" >
             <textarea name="body" class="form-control"></textarea>
         </div>
 
         <div class="form-group">
-            <button type="submit" class="btn btn-primary">Reservation</button>
+            <button type="submit" class="btn btn-primary pull-right" >Reservation</button>
         </div>
 
     </form>

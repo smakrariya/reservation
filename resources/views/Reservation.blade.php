@@ -54,7 +54,17 @@
     </form>
     <script>
         function reservationBooking() {
-            alert ('hello');
+            $.ajax({
+                type:'get',
+                url:'/save',
+                success: function (data) {
+                    document.write(data);
+                    data=JSON.parse(data);
+                    for (var i = 0; i <= 11; i++ ){
+
+                    }
+                }
+            })
         }
     </script>
 </body>

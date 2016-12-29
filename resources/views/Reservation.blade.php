@@ -79,13 +79,10 @@
                     console.log(data);
                     var num=1;
                     for (var i = 0; i <= 11; i++ ){
-                    //for (var i in data ){
                         var limit=(i==11) ? 3 : 7;
-                        for(var j=0;j<7;j++) {
-                            //console.log("kkk");
-                            //console.log(data[i][j]);
-                            //var classname= data[i][j] ? "badge badge-active-seat" : "badge";
-                            $('<span>', {"class": "badge"}).html(num).appendTo($('#row' + i+1));
+                        for(var j=0;j<limit;j++) {
+                            var classname= data[i][j] ? "badge badge-active-seat" : "badge";
+                            $('<span>', {"class": classname}).html(num).appendTo($('#row' + (i+1)));
                             num++;
                         }
                     }

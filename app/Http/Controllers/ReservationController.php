@@ -154,7 +154,8 @@ class ReservationController extends Controller
      */
     public function printArray($bookingSeat)
     {
-        Session::put(['reservation' => $bookingSeat]);
+        return $bookingSeat;
+        /*Session::put(['reservation' => $bookingSeat]);
         echo '<table>';
         for($i = 0 ; $i < 12; $i++){
             echo '<tr>';
@@ -168,7 +169,7 @@ class ReservationController extends Controller
         }
         echo '</table>';
         echo '<br />';
-        $this->button();
+        $this->button();*/
     }
 
     public function button(){

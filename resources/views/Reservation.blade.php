@@ -42,9 +42,9 @@
     </style>
 </head>
 <body>
-    <form method="GET" action="/save" style="max-width: 500px; margin-top: 15px;">
+    <form method="GET" onsubmit="return reservationBooking();" style="max-width: 500px; margin-top: 15px;">
         <div class="form-group col-sm-12"  >
-            <textarea name="body" class="form-control"></textarea>
+            <input name="seatsNo" type="number" class="form-control" required>
         </div>
 
         <div class="form-group col-sm-12">
@@ -52,6 +52,11 @@
         </div>
 
     </form>
+    <script>
+        function reservationBooking() {
+            alert ('hello');
+        }
+    </script>
 </body>
 </html>
 

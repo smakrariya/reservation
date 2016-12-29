@@ -24,7 +24,7 @@ class ReservationController extends Controller
 
     public function reset(){
         Session::destroy();
-        return 'sucess';
+        return response()->back();
     }
 
     public function calculation(Request $request)

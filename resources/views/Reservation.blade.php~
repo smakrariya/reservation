@@ -46,16 +46,6 @@
         <div class="form-group col-sm-12"  >
             <input id="seatsNo" name="seatsNo" type="number" min="1" max="7" class="form-control" required>
         </div>
-	<div class="text-center">
-        <div id="row1">
-        <span class="badge badge-active">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        </div>
 
         <div class="form-group col-sm-12">
             <button type="submit" class="btn btn-primary pull-right" >Reservation</button>

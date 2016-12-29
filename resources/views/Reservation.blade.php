@@ -77,10 +77,12 @@
                 url:'/save?seatsNo='+$('#seatsNo').val(),
                 success: function (data) {
                     data=JSON.parse(data);
+                    console.log(data);
                     var num=1;
                     for (var i = 0; i <= 11; i++ ){
                         var limit=(i==11) ? 3 : 7;
                         for(var j=0;j<limit;j++) {
+                            console.log(data[i][j]);
                             var classname= data[i][j] ? "badge badge-active-seat" : "badge";
                             $('<span>', {"class": classname}).html(num).appendTo($('#row' + i+1));
                             num++;

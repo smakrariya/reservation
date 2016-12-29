@@ -16,10 +16,15 @@ class ReservationController extends Controller
             }
         }
 
-        //if(!Session::has('reservation'))
+        if(!Session::has('reservation'))
             Session::put('reservation', $seat);
 
         return view('Reservation');
+    }
+
+    public function reset(){
+        Session::destroy();
+        return 'sucess';
     }
 
     public function calculation(Request $request)
@@ -93,7 +98,6 @@ class ReservationController extends Controller
 
         else{
             echo'Please type authorise number';
-            $this->button();
         }
 
         if($seatBooked)
@@ -154,33 +158,8 @@ class ReservationController extends Controller
      */
     public function printArray($bookingSeat)
     {
-//var_dump(json_encode($bookingSeat));
-        //return json_encode($bookingSeat);
         Session::put(['reservation' => $bookingSeat]);
         return ($bookingSeat);
-        /*Session::put(['reservation' => $bookingSeat]);
-        echo '<table>';
-        for($i = 0 ; $i < 12; $i++){
-            echo '<tr>';
-            for($j = 0; $j < 7; $j ++) {
-                if($bookingSeat[$i][$j] == 1)
-                    echo '<td>' . (($i)*7 + ($j+1)).'</td>';
-                else
-                    echo '<td>' . $bookingSeat[$i][$j].'</td>';
-            }
-            echo '</tr>';
-        }
-        echo '</table>';
-        echo '<br />';
-        $this->button();*/
-    }
-
-    public function button(){
-       /* echo '<form method="GET" action="/back">
-                <div class="form-group">
-            <button type="submit" class="btn btn-primary">Reservation</button>
-        </div>
-        </form>';*/
     }
 
 }

@@ -67,6 +67,7 @@
 
         <div class="form-group col-sm-12">
             <button type="submit" class="btn btn-primary pull-right" >Reservation</button>
+            <button type="reset" class="btn btn-primary pull-right" >Reset</button>
         </div>
 
     </form>
@@ -97,6 +98,18 @@
                     num++;
                 }
             }
+        }
+        function resetBooking() {
+            $.ajax({
+                type:'get',
+                url:'/reset',
+                success: function (data) {
+                    if(data == "success") {
+                        drawSeats();
+                    }
+                }
+            });
+            return false;
         }
     </script>
 </body>

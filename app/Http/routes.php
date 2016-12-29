@@ -18,3 +18,4 @@ Route::get('/', function () {
 Route::get('/reservation', 'ReservationController@index');
 Route::get('/save', 'ReservationController@calculation');
 Route::get('/back', 'ReservationController@index');
+Route::get('/reset', 'ReservationController@reset');

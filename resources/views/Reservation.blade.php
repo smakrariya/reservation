@@ -45,7 +45,7 @@
         }
     </style>
 </head>
-<body>
+<body onload="drawSeats()">
 <div class="text-center">
     <div id="row1"></div>
     <div id="row2"></div>
@@ -76,23 +76,23 @@
                 type:'get',
                 url:'/save?seatsNo='+$('#seatsNo').val(),
                 success: function (data) {
-                    console.log(data);
-                    var num=1;
-                    for (var i = 0; i <= 11; i++ ){
-                        var limit=(i==11) ? 3 : 7;
-                        for(var j=0;j<limit;j++) {
-                            //console.log("kkk");
-                            //console.log(data[i][j]);
-                            //var classname= data[i][j] ? "badge badge-active-seat" : "badge";
-                            $('<span>', {"class": "badge"}).html(num).appendTo($('#row' + (i+1)));
-                            var classname= data[i][j] ? "badge badge-active-seat" : "badge";
-                            $('<span>', {"class": classname}).html(num).appendTo($('#row' + (i+1)));
-                            num++;
-                        }
-                    }
+                    drawSeats(data);
                 }
             });
             return false;
+        }
+        function drawSeats(data){
+            var num=1;
+            for (var i = 0; i <= 11; i++ ){
+                var limit=(i==11) ? 3 : 7;
+                for(var j=0;j<limit;j++) {
+                    var $row=$('#row'+(i+1));
+                    $row.empty();
+                    var classname= data ? (data[i][j] ? "badge badge-active-seat" : "badge") : "badge";
+                    $('<span>', {"class": classname}).html(num).appendTo($row);
+                    num++;
+                }
+            }
         }
     </script>
 </body>

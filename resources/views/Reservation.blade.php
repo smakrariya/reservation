@@ -67,7 +67,7 @@
 
         <div class="form-group col-sm-12">
             <button type="submit" class="btn btn-primary pull-right" >Reservation</button>
-            <button type="reset" onsubmit="return resetBooking();" class="btn btn-primary pull-right"style="margin-right: 5px" >Reset</button>
+            <button type="reset" onclick="return resetBooking();" class="btn btn-primary pull-right"style="margin-right: 5px" >Reset</button>
         </div>
 
     </form>

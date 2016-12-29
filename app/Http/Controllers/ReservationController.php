@@ -31,7 +31,7 @@ class ReservationController extends Controller
             }
         }*/
 
-        $seatBooked = $request['body'];
+        $seatBooked = $request['seatsNo'];
         $seat = Session::get('reservation');
         //for($i = 0; $i <= 13; $i++){
             //$bookedSeat = $this->SeatBooking($seat, rand(1,7));

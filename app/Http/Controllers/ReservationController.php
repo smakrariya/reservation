@@ -22,8 +22,11 @@ class ReservationController extends Controller
         return view('Reservation');
     }
 
+    /**
+     * @return string
+     * Function Used for reset the reservation
+     */
     public function reset(){
-
         $seat = [];
         for ($i = 11; $i >= 0; $i--) {
             for ($j = 0; $j < 7; $j++) {
@@ -35,23 +38,22 @@ class ReservationController extends Controller
         return 'success';
     }
 
+    /**
+     * @param Request $request
+     * @return string
+     * Function calculate and booked the seats
+     */
     public function calculation(Request $request)
     {
-        /*$seat = [];
-        for ($i = 11; $i >= 0; $i--) {
-            for ($j = 0; $j < 7; $j++) {
-                $seat[$i][$j] = 0;
-            }
-        }*/
-
         $seatBooked = $request['seatsNo'];
         $seat = Session::get('reservation');
-        //for($i = 0; $i <= 13; $i++){
-            //$bookedSeat = $this->SeatBooking($seat, rand(1,7));
+
         if($seatBooked)
             $bookedSeat = $this->SeatBooking($seat, $seatBooked);
-        else
+
+        else{
             return $this->printArray($seat);
+        }
 
             if($bookedSeat){
                 $seat = $bookedSeat;
@@ -60,21 +62,19 @@ class ReservationController extends Controller
             else
             {
                 $bookedSeat = $this->SeatBookingNotInSameRow($seat, $seatBooked);
-                //$seat = $bookedSeat;
                 if($bookedSeat)
                     return $this->printArray($bookedSeat);
                 else
                     return "NO SPACE IS AVAILABLE";
             }
-
-        //}
-        //$this->printArray($bookedSeat);
     }
 
     /**
      * @param $bookingSeat
      * @param $seatBook
      * @return mixed
+     *
+     * Function used for booked the seats in the same Row
      */
     public function SeatBooking($bookingSeat, $seatBook)
     {
@@ -106,7 +106,7 @@ class ReservationController extends Controller
                 }
             }
         }
-
+        //Validation form Backend
         else{
             echo'Please type authorise number';
         }
@@ -117,6 +117,12 @@ class ReservationController extends Controller
             return 0;
     }
 
+    /**
+     * @param $seat
+     * @param $seatBooking
+     * @return int|mixed
+     * Function used for calculating and Booked the seats in nearby row
+     */
     public function SeatBookingNotInSameRow($seat, $seatBooking)
     {
         $counter = 0;
@@ -142,6 +148,7 @@ class ReservationController extends Controller
      * @param $seat
      * @param $seatBooking
      * @return mixed
+     * Function Used for booked the seats in nearby row
      */
     public function booking($seat , $seatBooking)
     {
@@ -166,6 +173,7 @@ class ReservationController extends Controller
 
     /**
      * @param $bookingSeat
+     * Print the Booked seat
      */
     public function printArray($bookingSeat)
     {

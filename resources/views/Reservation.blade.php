@@ -44,7 +44,7 @@
 <body>
     <form method="GET" onsubmit="return reservationBooking();" style="max-width: 500px; margin-top: 15px;">
         <div class="form-group col-sm-12"  >
-            <input name="seatsNo" type="number" min="1" max="7" class="form-control" required>
+            <input id="seatsNo" name="seatsNo" type="number" min="1" max="7" class="form-control" required>
         </div>
 
         <div class="form-group col-sm-12">
@@ -56,7 +56,7 @@
         function reservationBooking() {
             $.ajax({
                 type:'get',
-                url:'/save',
+                url:'/save?seatsNo='+$('#seatsNo').val(),
                 success: function (data) {
                     document.write(data);
                     data=JSON.parse(data);

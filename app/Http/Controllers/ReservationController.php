@@ -31,11 +31,11 @@ class ReservationController extends Controller
             }
         }*/
 
-        //$seatBooked = $request[''];
+        $seatBooked = $request['body'];
         $seat = Session::get('reservation');
-        for($i = 0; $i <= 13; $i++){
+        //for($i = 0; $i <= 13; $i++){
             //$bookedSeat = $this->SeatBooking($seat, rand(1,7));
-            $bookedSeat = $this->SeatBooking($seat, 6);
+            $bookedSeat = $this->SeatBooking($seat, $seatBooked);
 
             if($bookedSeat){
                 $seat = $bookedSeat;
@@ -43,12 +43,12 @@ class ReservationController extends Controller
             }
             else
             {
-                $bookedSeat = $this->SeatBookingNotInSameRow($seat, 6);
+                $bookedSeat = $this->SeatBookingNotInSameRow($seat, $seatBooked);
                 $seat = $bookedSeat;
                 $this->printArray($bookedSeat);
             }
 
-        }
+        //}
         //$this->printArray($bookedSeat);
     }
 

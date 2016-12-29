@@ -39,6 +39,10 @@
         .title {
             font-size: 96px;
         }
+
+        .badge-active-seat{
+            background-color: darkgreen;
+        }
     </style>
 </head>
 <body>
@@ -77,7 +81,8 @@
                     for (var i = 0; i <= 11; i++ ){
                         var limit=(i==11) ? 3 : 7;
                         for(var j=0;j<limit;j++) {
-                            $('<span>', {"class": "badge"}).html(num).appendTo($('#row' + i));
+                            var classname= data[i][j] ? "badge badge-active-seat" : "badge";
+                            $('<span>', {"class": classname}).html(num).appendTo($('#row' + i+1));
                             num++;
                         }
                     }

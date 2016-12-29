@@ -21,12 +21,12 @@
       <file leaf-file-name="ReservationController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReservationController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="190">
-              <caret line="154" column="35" lean-forward="false" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
+            <state relative-caret-position="173">
+              <caret line="153" column="5" lean-forward="false" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
               <folding>
                 <element signature="e#40#68#0#PHP" expanded="true" />
-                <marker date="1482994297031" expanded="true" signature="4640:4791" ph="..." />
-                <marker date="1482994297031" expanded="true" signature="4681:4775" ph="..." />
+                <marker date="1482994364956" expanded="true" signature="4604:4755" ph="..." />
+                <marker date="1482994364956" expanded="true" signature="4645:4739" ph="..." />
               </folding>
             </state>
           </provider>
@@ -198,7 +198,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1482848881971</updated>
-      <workItem from="1482848886089" duration="31966000" />
+      <workItem from="1482848886089" duration="32026000" />
     </task>
     <task id="LOCAL-00001" summary="range in view">
       <created>1482992860874</created>
@@ -277,11 +277,18 @@
       <option name="project" value="LOCAL" />
       <updated>1482994200646</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="small">
+      <created>1482994311101</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1482994311101</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="31966000" />
+    <option name="totallyTimeSpent" value="32026000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -382,12 +389,12 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/ReservationController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="154" column="35" lean-forward="false" selection-start-line="154" selection-start-column="35" selection-end-line="154" selection-end-column="35" />
+        <state relative-caret-position="173">
+          <caret line="153" column="5" lean-forward="false" selection-start-line="153" selection-start-column="5" selection-end-line="153" selection-end-column="5" />
           <folding>
             <element signature="e#40#68#0#PHP" expanded="true" />
-            <marker date="1482994297031" expanded="true" signature="4640:4791" ph="..." />
-            <marker date="1482994297031" expanded="true" signature="4681:4775" ph="..." />
+            <marker date="1482994364956" expanded="true" signature="4604:4755" ph="..." />
+            <marker date="1482994364956" expanded="true" signature="4645:4739" ph="..." />
           </folding>
         </state>
       </provider>

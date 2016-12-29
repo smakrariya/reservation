@@ -85,11 +85,11 @@
             var num=1;
             for (var i = 0; i <= 11; i++ ){
                 var limit=(i==11) ? 3 : 7;
+                var $row=$('#row'+(i+1));
+                $row.empty();
                 for(var j=0;j<limit;j++) {
-                    var $row=$('#row'+(i+1));
-                    $row.empty();
                     var classname= data ? (data[i][j] ? "badge badge-active-seat" : "badge") : "badge";
-                    $('<span>', {"class": classname}).html(num).appendTo($row);
+                    $('<span>', {"class": "badge"}).html(num).appendTo($row);
                     num++;
                 }
             }

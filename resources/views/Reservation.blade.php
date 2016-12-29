@@ -42,7 +42,7 @@
     </style>
 </head>
 <body>
-    <form method="GET" onsubmit="return reservationBooking();" style="max-width: 500px; margin-top: 15px;">
+    <form onsubmit="reservationBooking();" style="max-width: 500px; margin-top: 15px;">
         <div class="form-group col-sm-12"  >
             <input id="seatsNo" name="seatsNo" type="number" min="1" max="7" class="form-control" required>
         </div>

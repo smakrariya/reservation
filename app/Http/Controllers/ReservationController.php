@@ -16,7 +16,7 @@ class ReservationController extends Controller
             }
         }
 
-        if(!Session::has('reservation'))
+        //if(!Session::has('reservation'))
             Session::put('reservation', $seat);
 
         return view('Reservation');

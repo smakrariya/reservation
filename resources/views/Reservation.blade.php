@@ -42,19 +42,23 @@
     </style>
 </head>
 <body>
+<div class="text-center">
+    <div id="row1"></div>
+    <div id="row2"></div>
+    <div id="row3"></div>
+    <div id="row4"></div>
+    <div id="row5"></div>
+    <div id="row6"></div>
+    <div id="row7"></div>
+    <div id="row8"></div>
+    <div id="row9"></div>
+    <div id="row10"></div>
+    <div id="row11"></div>
+    <div id="row12"></div>
+</div>
     <form method="get" onsubmit="return reservationBooking();" style="max-width: 500px; margin-top: 15px;">
         <div class="form-group col-sm-12"  >
             <input id="seatsNo" name="seatsNo" type="number" min="1" max="7" class="form-control" required>
-        </div>
-	<div class="text-center">
-        <div id="row1">
-        <span class="badge badge-active">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
-        <span class="badge">1</span>
         </div>
 
         <div class="form-group col-sm-12">
@@ -70,8 +74,13 @@
                 success: function (data) {
                     document.write(data);
                     data=JSON.parse(data);
+                    var num=1;
                     for (var i = 0; i <= 11; i++ ){
-
+                        var limit=(i==11) ? 3 : 7;
+                        for(var j=0;j<limit;j++) {
+                            $('<span>', {"class": "badge"}).html(num).appendTo($('#row' + i));
+                            num++;
+                        }
                     }
                 }
             });

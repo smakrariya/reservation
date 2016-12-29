@@ -3,12 +3,12 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Session;
 use App\Http\Requests;
 
 class ReservationController extends Controller
 {
-    /*public function index(){
+    public function index(){
         $seat = [];
         for ($i = 11; $i >= 0; $i--) {
             for ($j = 0; $j < 7; $j++) {
@@ -16,19 +16,25 @@ class ReservationController extends Controller
             }
         }
 
+        if(!Session::has('reservation'))
+            Session::put(['reservation' => $seat]);
+
         return view('Reservation');
-    }*/
-    public function index()
+    }
+
+    public function calculation(Request $request)
     {
-        $seat = [];
+        /*$seat = [];
         for ($i = 11; $i >= 0; $i--) {
             for ($j = 0; $j < 7; $j++) {
                 $seat[$i][$j] = 0;
             }
-        }
-        $seatBooked = 6;
+        }*/
+
+        //$seatBooked = $request[''];
+        $seat = Session::get('reservation');
         for($i = 0; $i <= 13; $i++){
-            //$bookedSeat = $this->SeatBooking($seat, rand(1, 7));
+            //$bookedSeat = $this->SeatBooking($seat, rand(1,7));
             $bookedSeat = $this->SeatBooking($seat, 6);
 
             if($bookedSeat){
@@ -37,7 +43,7 @@ class ReservationController extends Controller
             }
             else
             {
-                $bookedSeat = $this->SeatBookingNotInSameRow($seat, $seatBooked);
+                $bookedSeat = $this->SeatBookingNotInSameRow($seat, 6);
                 $seat = $bookedSeat;
                 $this->printArray($bookedSeat);
             }
@@ -45,6 +51,7 @@ class ReservationController extends Controller
         }
         //$this->printArray($bookedSeat);
     }
+
     /**
      * @param $bookingSeat
      * @param $seatBook
@@ -104,7 +111,6 @@ class ReservationController extends Controller
             }
         }
         if($counter >= $seatBooking){
-            var_dump($counter);
             $seat = $this->booking($seat, $seatBooking);
             return $seat;
         }
@@ -152,7 +158,6 @@ class ReservationController extends Controller
                     echo '<td>' . (($i)*7 + ($j+1)).'</td>';
                 else
                     echo '<td>' . $bookingSeat[$i][$j].'</td>';
-                    //echo "| ". $bookingSeat[$i][$j];
             }
             echo '</tr>';
         }

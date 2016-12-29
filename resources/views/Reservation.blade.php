@@ -47,7 +47,7 @@
             <textarea name="body" class="form-control"></textarea>
         </div>
 
-        <div class="form-group">
+        <div class="form-group col-sm-12">
             <button type="submit" class="btn btn-primary pull-right" >Reservation</button>
         </div>
 

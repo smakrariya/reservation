@@ -48,7 +48,10 @@ class ReservationController extends Controller
         $seat = Session::get('reservation');
         //for($i = 0; $i <= 13; $i++){
             //$bookedSeat = $this->SeatBooking($seat, rand(1,7));
+        if($seatBooked)
             $bookedSeat = $this->SeatBooking($seat, $seatBooked);
+        else
+            return $this->printArray($seat);
 
             if($bookedSeat){
                 $seat = $bookedSeat;

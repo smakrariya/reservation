@@ -45,7 +45,7 @@
         }
     </style>
 </head>
-<body onload="reservationBooking()">
+<body onload="reservationBooking(0)">
 <div class="text-center">
     <div id="row1"></div>
     <div id="row2"></div>
@@ -60,7 +60,7 @@
     <div id="row11"></div>
     <div id="row12"></div>
 </div>
-    <form method="get" onsubmit="return reservationBooking();" style="max-width: 500px; margin-top: 15px;">
+    <form method="get" onsubmit="return reservationBooking($('#seatsNo').val());" style="max-width: 500px; margin-top: 15px;">
         <div class="form-group col-sm-12"  >
             <input id="seatsNo" name="seatsNo" type="number" min="1" max="7" class="form-control" required>
         </div>
@@ -72,10 +72,10 @@
 
     </form>
     <script>
-        function reservationBooking() {
+        function reservationBooking(seat) {
             $.ajax({
                 type:'get',
-                url:'/save?seatsNo='+$('#seatsNo').val(),
+                url:'/save?seatsNo='+seat,
                 success: function (data) {
                     if(typeof data == "string"){
                         alert (data);

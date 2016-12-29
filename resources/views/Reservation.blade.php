@@ -60,7 +60,7 @@
     <div id="row11"></div>
     <div id="row12"></div>
 </div>
-    <form method="get" onsubmit="return reservationBooking($('#seatsNo').val());" style="max-width: 500px; margin-top: 15px;">
+    <form method="get" onsubmit="return reservationBooking($('#seatsNo').val());" style="max-width: 500px; padding-top:15px; margin: 0 auto;">
         <div class="form-group col-sm-12"  >
             <input id="seatsNo" name="seatsNo" type="number" min="1" max="7" class="form-control" required>
         </div>

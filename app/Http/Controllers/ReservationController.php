@@ -59,8 +59,6 @@ class ReservationController extends Controller
      */
     public function SeatBooking($bookingSeat, $seatBook)
     {
-        echo $seatBook;
-        echo "<br />";
         $seatBooked = 0;
         if ($seatBook <= 7 && $seatBook > 0) {
             for ($i = 11; $i >= 0; $i--) {
@@ -173,11 +171,11 @@ class ReservationController extends Controller
     }
 
     public function button(){
-        echo '<form method="GET" action="/back">
+       /* echo '<form method="GET" action="/back">
                 <div class="form-group">
             <button type="submit" class="btn btn-primary">Reservation</button>
         </div>
-        </form>';
+        </form>';*/
     }
 
 }

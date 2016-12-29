@@ -23,8 +23,16 @@ class ReservationController extends Controller
     }
 
     public function reset(){
-        Session::destroy();
-        return response()->back();
+
+        $seat = [];
+        for ($i = 11; $i >= 0; $i--) {
+            for ($j = 0; $j < 7; $j++) {
+                $seat[$i][$j] = 0;
+            }
+        }
+
+        Session::put('reservation', $seat);
+        return 'success';
     }
 
     public function calculation(Request $request)

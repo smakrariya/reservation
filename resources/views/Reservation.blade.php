@@ -79,7 +79,8 @@
                     data=JSON.parse(data);
                     console.log(data);
                     var num=1;
-                    for (var i = 0; i <= 11; i++ ){
+                    //for (var i = 0; i <= 11; i++ ){
+                    for (var i in data ){
                         var limit=(i==11) ? 3 : 7;
                         for(var j=0;j<limit;j++) {
                             console.log(data[i][j]);

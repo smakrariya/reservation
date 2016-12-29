@@ -89,7 +89,7 @@
                 $row.empty();
                 for(var j=0;j<limit;j++) {
                     var classname= data ? (data[i][j] ? "badge badge-active-seat" : "badge") : "badge";
-                    $('<span>', {"class": "badge"}).html(num).appendTo($row);
+                    $('<span>', {"class": classname}).html(num).appendTo($row);
                     num++;
                 }
             }

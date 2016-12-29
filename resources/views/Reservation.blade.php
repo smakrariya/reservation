@@ -72,7 +72,6 @@
                 type:'get',
                 url:'/save?seatsNo='+$('#seatsNo').val(),
                 success: function (data) {
-                    document.write(data);
                     data=JSON.parse(data);
                     var num=1;
                     for (var i = 0; i <= 11; i++ ){

@@ -49,7 +49,7 @@
     </style>
 </head>
 <body onload="reservationBooking(0)">
-<div class="text-center">
+<div style="padding-top: 15px;" class="text-center">
     <div id="row1"></div>
     <div id="row2"></div>
     <div id="row3"></div>

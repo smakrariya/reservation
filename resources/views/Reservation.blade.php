@@ -63,9 +63,9 @@
                     for (var i = 0; i <= 11; i++ ){
 
                     }
-                    return false;
                 }
-            })
+            });
+            return false;
         }
     </script>
 </body>

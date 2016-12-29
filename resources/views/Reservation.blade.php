@@ -53,7 +53,8 @@
 
     </form>
     <script>
-        function reservationBooking() {
+        function reservationBooking(e) {
+            e.preventDefault();
             $.ajax({
                 type:'get',
                 url:'/save?seatsNo='+$('#seatsNo').val(),

@@ -164,6 +164,13 @@ class ReservationController extends Controller
         }
         echo '</table>';
         echo '<br />';
+
+        echo '<form method="GET" action="/back">
+                <div class="form-group">
+            <button type="submit" class="btn btn-primary">Reservation</button>
+        </div>
+        </form>';
+
     }
 
 

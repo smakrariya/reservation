@@ -154,6 +154,7 @@ class ReservationController extends Controller
     {
 //var_dump(json_encode($bookingSeat));
         //return json_encode($bookingSeat);
+        Session::put(['reservation' => $bookingSeat]);
         return ($bookingSeat);
         /*Session::put(['reservation' => $bookingSeat]);
         echo '<table>';

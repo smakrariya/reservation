@@ -156,17 +156,17 @@ class ReservationController extends Controller
         $booked = 0;
         for ($i = 11; $i >= 0; $i--) {
             $rowLimit = ($i == 11) ? 3 : 7;
-            if (!$booked) {
                 for ($j = 0; $j < $rowLimit; $j++) {
-                    if ($seat[$i][$j] == 0) {
-                        $seat[$i][$j] = 1;
-                        $counter++;
+                    if(!$booked){
+                        if ($seat[$i][$j] == 0) {
+                            $seat[$i][$j] = 1;
+                            $counter++;
+                        }
                     }
 
                     if ($counter == $seatBooking)
                         $booked = 1;
                 }
-            }
         }
         return $seat;
     }
